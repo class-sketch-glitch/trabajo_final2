@@ -1,13 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .screen_details{
       flex: 1;
       overflow-y: auto;
+}
+.contact_card{
+
+     background-color: #a2cf9b;
+    gap: 30px;
+
+}
+.contact_card img {
+  width: 50px;     
+  height: 50px;  
+  object-fit: cover;
+  border-radius: 50%; 
 }
 .sidebar{
      flex: 1;
      border-right: 1px solid #ccc;
      overflow-y: auto;
-     background-color: #17cf3f;
+     background-color: #ceeed5;
      border-radius: 20px;
+   
 }
 .app-container{
      display: flex;
@@ -18,9 +36,15 @@
      flex-direction: column;
      gap: 20px;
      padding: 20px;
-     background-color: #cbe2d0;
+     background-color: #8a968c;
      border-radius: 20px;
      height: 100%;
+}
+.details_container img{
+  width: 50px;     
+  height: 50px;  
+  object-fit: cover;
+  border-radius: 50%; 
 }
 .messages_by_else{
      display: flex;

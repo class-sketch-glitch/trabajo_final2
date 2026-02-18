@@ -36,7 +36,7 @@ export function Contact_screen_details() {
   }
 
   return (
-    <div className="details_container" style={{ padding: '20px' }}>
+    <div className="details_container" >
       <h2>{contactoSeleccionado.nombre}</h2>
       <img src={contactoSeleccionado.imagen} alt={contactoSeleccionado.nombre} style={{ maxWidth: '100%' }} />
       

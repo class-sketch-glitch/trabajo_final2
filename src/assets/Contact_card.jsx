@@ -5,9 +5,9 @@ export function Contact_card() {
   const [searchParams, setSearchParams] = useSearchParams()
   
   return (
-    <div>
+    <div className='contact_card'>
      {contactos.map((contacto) =>(
-          <div key={contacto.id} style={{ padding: '10px', borderBottom: '1px solid #eee', cursor: 'pointer' }} onClick={() => setSearchParams({ id: contacto.id })}>
+          <div key={contacto.id}  onClick={() => setSearchParams({ id: contacto.id })}>
               <h3>{contacto.nombre}</h3>
                <img src={contacto.imagen} alt={contacto.nombre}/>
              
