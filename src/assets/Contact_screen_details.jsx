@@ -12,7 +12,8 @@ export function Contact_screen_details() {
   // 3. Mover el useContext arriba de cualquier "if" o "return"
   const { contacts,setContacts } = useContext(ContactContext);
 
-  const contactoSeleccionado = contactos.find(c => c.id === parseInt(id));
+  const contactoEnContexto = contacts.find(c => c.id === parseInt(id));
+  const contactoSeleccionado = contactoEnContexto || contactos.find(c => c.id === parseInt(id));
 
   const enviarAlContexto = () => {
     if (mensaje.trim() === "") return;
