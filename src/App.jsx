@@ -5,21 +5,27 @@ import { Contact_screen_details } from './assets/Contact_screen_details';
 import ContactProvider from './assets/contect/Contact_contexto';
 import './estilos.css'
 function App() {
-  const [searchParams] = useSearchParams()
-  const contactoId = searchParams.get('id')
-
   return (
     <ContactProvider>
-      <div className="app-container" >
+      <div className="app-container">
         <div className='sidebar'>
           <Sidebar />
         </div>
-        <div className='screen_details' >
-          {contactoId ? <Contact_screen_details id={contactoId} /> : <p>Selecciona un contacto</p>}
+        
+        <div className='screen_details'>
+       
+          <Routes>
+           
+            <Route path="/Contact_screen_details" element={<p className="placeholder-text">Selecciona un contacto para comenzar</p>} />
+          
+            <Route path="/chat/:id" element={<Contact_screen_details />} />
+            
+        
+            <Route path="*" element={<p className="placeholder-text">Ruta no válida</p>} />
+          </Routes>
         </div>
       </div>
     </ContactProvider>
-  )
+  );
 }
-
 export default App
