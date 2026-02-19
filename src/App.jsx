@@ -15,7 +15,6 @@ function App() {
           <Sidebar />
         </div>
         <div className='screen_details' >
-
           {contactoId ? <Contact_screen_details id={contactoId} /> : <p>Selecciona un contacto</p>}
         </div>
       </div>

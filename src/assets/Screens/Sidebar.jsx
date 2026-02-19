@@ -1,13 +1,25 @@
+     import { useSearchParams } from 'react-router-dom'
+import { contactos } from '../contactos';
 import { useContext } from 'react';
-import {Contact_card} from '../Contact_card.jsx';
-import { ContactContext } from '../contect/Contact_contexto.jsx';
-export function Sidebar(){
-     const context = useContext( ContactContext)
-     return (
-          
-         <div>
-               <div><Contact_card /></div>
-               
+import { ContactContext } from '../contect/Contact_contexto';
+
+export function Sidebar() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const { contacts } = useContext(ContactContext);
+  return (
+    <div className='contact_card'>
+     {contactos.map((contacto) =>(
+          <div key={contacto.id}  onClick={() => setSearchParams({ id: contacto.id })}>
+              <h3>{contacto.nombre}</h3>
+               <img src={contacto.imagen} alt={contacto.nombre}/>
+             
+               <p>{contacto.mensaje}</p>
+                <p>{contacto.ultima_conexion}</p>
+                <p>{contacto.mensajes[contacto.mensajes.length - 1].id}</p>
           </div>
-     )
-}         
+     ))}
+
+
+    </div>
+  )
+}

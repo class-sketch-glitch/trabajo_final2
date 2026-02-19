@@ -1,0 +1,7 @@
+.pantalla_chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ca1616;
+}
