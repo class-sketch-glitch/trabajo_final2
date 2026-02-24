@@ -4,60 +4,45 @@ import "./Contact_screen_details.css";
 
 import { useState, useContext } from 'react'; // 1. Agregado useContext
 import { ContactContext } from './contect/Contact_contexto.jsx'; // 2. Importar tu contexto
+import { NewMessage } from '../newmessage.jsx';
 
 export function Contact_screen_details() {
-  
-  const { id } = useParams()
-  const [mensaje, setMensaje] = useState("");
+  // 2. OBTENER EL ID DE LA URL
+  const { id } = useParams();
 
-  const { contacts, setContacts } = useContext(ContactContext);
+  // 3. USAR EL CONTEXTO (Para que sea dinámico)
+  const { contacts } = useContext(ContactContext);
 
 
-  const contactoSeleccionado = contacts.find(c => c.id === parseInt(id));
+  const contactoSeleccionado = contacts.find(c => c.id === parseInt(id)); 
 
-  const enviarAlContexto = () => {
-
-    if (!contactoSeleccionado || mensaje.trim() === "") return;
-
-    setContacts(prevContacts => {
-      return prevContacts.map(c => {
-        if (c.id === contactoSeleccionado.id) {
-          return {
-            ...c,
-            mensajes: [...c.mensajes, { id: Date.now(), texto: mensaje, send_by_me: true }]
-          };
-        }
-        return c;
-      });
-    });
-    setMensaje("");
-  };
   if (!contactoSeleccionado) {
     return <div className="seleccionador_contactos">Selecciona un contacto</div>;
   }
 
   return (
-    <div className="details_container" >
-      <h2>{contactoSeleccionado.nombre}</h2>
-      <img src={contactoSeleccionado.imagen} alt={contactoSeleccionado.nombre} style={{ maxWidth: '100%' }} />
+    <div className="details_container">
+      <div className='data_container'>
+        <img src={contactoSeleccionado.imagen} alt={contactoSeleccionado.nombre} />
+        <div>
+          <h2>{contactoSeleccionado.nombre}</h2>
+          <p>Última conexión: {contactoSeleccionado.ultima_conexion}</p>
+        </div>
+        <div className='svg_part'>
+         
+        </div>
+      </div>
 
-      <div className="messages_container" >
+      <div className="messages_container">
         {contactoSeleccionado.mensajes.map((mensaje) => (
           <div key={mensaje.id} className={mensaje.send_by_me ? 'message_by_me' : 'messages_by_else'}>
             <p>{mensaje.texto}</p>
           </div>
         ))}
       </div>
-
-      <div className='text_area'>
-        <textarea
-          value={mensaje}
-          onChange={(e) => setMensaje(e.target.value)}
-          className='text_area_input'
-        />
-        <button onClick={enviarAlContexto}>Enviar</button>
-      </div>
-
+      
+    
+      <NewMessage />
     </div>
   );
 }
