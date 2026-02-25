@@ -9,32 +9,48 @@ function App() {
     <ContactProvider>
       <div className="app-container">
 
-        <Sidebar />
+       
 
 
         <div className='screen_details'>
 
           <Routes>
-
-            <Route path="/Contact_screen_details" element={<p className="placeholder-text">Selecciona un contacto para comenzar</p>} />
-
-            <Route path="/chat/:id" element={<Contact_screen_details />} />
-
-
-            <Route path="*" element={<div className="placeholder-text-container">
-             <div>
+<Route 
+    path="/" 
+    element={
+      <div className="layout-principal">
+        
+        <div className="placeholder-text-container desktop-only">
+          <div>
             <img 
-  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-  alt="Logo de WhatsApp"
-  style={{ width: '50px', height: '50px' }} 
-/>
-             </div>
-             
-              <p>   Empiza una aventura</p>
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+              alt="Logo de WhatsApp"
+              
+            />
+          </div>
+          <p className="placeholder-text">Selecciona un contacto para comenzar</p>
+          <p>Empieza una aventura</p>
+          <Sidebar /> 
+        </div>
+      </div>
+    } 
+  />
 
-            </div>
-            } />
-          </Routes>
+  {/* 2. RUTA DEL CHAT (/chat/:id): Cuando entras a un chat específico */}
+  <Route 
+    path="/chat/:id" 
+    element={
+      <div className="layout-principal">
+  
+        <Sidebar className="hide-on-mobile" /> 
+        <Contact_screen_details />
+      </div>
+    } 
+  />
+
+  
+</Routes>
+         
         </div>
       </div>
     </ContactProvider>

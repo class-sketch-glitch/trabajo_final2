@@ -6,8 +6,6 @@ import { ContactContext } from './assets/contect/Contact_contexto';
 
 
 
-
-
 export function NewMessage() {
   const { contacts, setContacts } = useContext(ContactContext);
   const { id } = useParams();

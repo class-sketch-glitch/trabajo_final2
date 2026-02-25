@@ -1,16 +1,16 @@
 import { useParams, useSearchParams } from 'react-router-dom';
 import { contactos } from './contactos';
 import "./Contact_screen_details.css";
-
-import { useState, useContext } from 'react'; // 1. Agregado useContext
-import { ContactContext } from './contect/Contact_contexto.jsx'; // 2. Importar tu contexto
-import { NewMessage } from '../newmessage.jsx';
+import { Link } from 'react-router-dom';
+import { useState, useContext } from 'react'; 
+import { ContactContext } from './contect/Contact_contexto.jsx';
+import { NewMessage } from '../Newmessage.jsx';
 
 export function Contact_screen_details() {
-  // 2. OBTENER EL ID DE LA URL
+
   const { id } = useParams();
 
-  // 3. USAR EL CONTEXTO (Para que sea dinámico)
+  
   const { contacts } = useContext(ContactContext);
 
 
@@ -27,6 +27,7 @@ export function Contact_screen_details() {
         <div>
           <h2>{contactoSeleccionado.nombre}</h2>
           <p>Última conexión: {contactoSeleccionado.ultima_conexion}</p>
+        <Link  className="volver_button" to="/Sidebar">Volver a la lista</Link>
         </div>
         <div className='svg_part'>
          

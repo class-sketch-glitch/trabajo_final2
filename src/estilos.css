@@ -56,3 +56,23 @@
     justify-content: center;
      align-items: center;
 }
+/* PC: Se ven uno al lado del otro */
+.layout-principal {
+  display: flex;
+  height: 100vh;
+}
+
+/* MÓVIL: Se apilan o se esconden */
+@media (max-width: 768px) {
+  .layout-principal {
+    display: block; /* Ocupan todo el ancho disponible */
+  }
+
+  .hide-on-mobile {
+    display: none !important; /* El sidebar desaparece en el chat */
+  }
+
+  .desktop-only {
+    display: none; /* El logo de bienvenida desaparece para dejar espacio a la lista */
+  }
+}
