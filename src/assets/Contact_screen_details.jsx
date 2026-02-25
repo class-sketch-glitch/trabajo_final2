@@ -27,7 +27,13 @@ export function Contact_screen_details() {
         <div>
           <h2>{contactoSeleccionado.nombre}</h2>
           <p>Última conexión: {contactoSeleccionado.ultima_conexion}</p>
-        <Link  className="volver_button" to="/Sidebar">Volver a la lista</Link>
+          <Link to="/" className="boton-volver">
+   ← Ver lista de contactos
+</Link>
+        <div>
+   
+
+</div>
         </div>
         <div className='svg_part'>
          
@@ -43,7 +49,7 @@ export function Contact_screen_details() {
       </div>
       
     
-      <NewMessage />
+      <NewMessage contacto={contactoSeleccionado} />
     </div>
   );
 }

@@ -3,11 +3,20 @@ import { contactos } from '../contactos';
 import { useContext } from 'react';
 import { ContactContext } from '../contect/Contact_contexto';
 import "./sidebar.css";
-export function Sidebar() {
+export function Sidebar({ className }) {
   const [searchParams, setSearchParams] = useSearchParams()
   const { contacts } = useContext(ContactContext);
+  if (className) {
+    console.log("¡SOY EL SIDEBAR Y TENGO CLASE!", className);
+  } else {
+    console.log("¡SOY EL SIDEBAR Y NO TENGO NADA!");
+  }
   return (
-<div className='contact_list_container'>
+
+<div className={`contact_list_container ${className || ''}`}>
+  <div style={{color: 'white', background: 'red'}}>
+  La clase es: {className ? className : "NINGUNA"}
+</div>
   <div className='svg_container'>
    
 <div >

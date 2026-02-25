@@ -6,52 +6,34 @@ import ContactProvider from './assets/contect/Contact_contexto';
 import './estilos.css'
 function App() {
   return (
-    <ContactProvider>
+   <ContactProvider>
       <div className="app-container">
-
-       
-
-
-        <div className='screen_details'>
-
-          <Routes>
-<Route 
-    path="/" 
+        {/* Eliminamos el div 'screen_details' de aquí porque ya lo controlan las rutas internamente */}
+        <Routes>
+         {/* Agrega la palabra 'index' aquí. Esto le dice a React: 
+      "Solo muestra esto si la ruta es EXACTAMENTE /" */}
+  <Route 
+    index 
     element={
       <div className="layout-principal">
-        
-        <div className="placeholder-text-container desktop-only">
-          <div>
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-              alt="Logo de WhatsApp"
-              
-            />
-          </div>
-          <p className="placeholder-text">Selecciona un contacto para comenzar</p>
-          <p>Empieza una aventura</p>
-          <Sidebar /> 
+        <Sidebar /> 
+        <div className="desktop-only-placeholder">
+          <p>Seleccione un contacto para comenzar</p>
         </div>
       </div>
     } 
   />
 
-  {/* 2. RUTA DEL CHAT (/chat/:id): Cuando entras a un chat específico */}
   <Route 
     path="/chat/:id" 
     element={
-      <div className="layout-principal">
-  
+      <div className="vista-chat">
         <Sidebar className="hide-on-mobile" /> 
         <Contact_screen_details />
       </div>
     } 
   />
-
-  
-</Routes>
-         
-        </div>
+        </Routes>
       </div>
     </ContactProvider>
   );

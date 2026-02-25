@@ -53,7 +53,12 @@
      overflow-wrap: anywhere;
 }
 @media (max-width: 918px) {
-   .contact_list_container {
-    display: none;
-}
+  .sidebar, .chat {
+    width: 100vw;
+  }
+
+  /* Esta es la clase que "apaga" el elemento */
+  .ocultar-en-movil {
+    display: none !important;
+  }
 }
