@@ -9,8 +9,14 @@
      height: 100%;
      padding: 0%;
      flex-shrink: 0;
+     background-color: rgb(236, 232, 229);
 }
-
+.chat_window {
+  background-color: #e5ddd5; 
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); 
+  background-repeat: repeat;
+  background-attachment: fixed; 
+}
 .svg_part {
      display: flex;
      justify-content: flex-end;
@@ -46,8 +52,8 @@
      display: flex;
      flex-direction: column;
      align-self: flex-start;
-     /* El globo a la izquierda */
-     background-color: #2694dd;
+    
+     background-color:rgb(244, 239, 234);
      width: fit-content;
      max-width: 80%;
      word-wrap: break-word;
@@ -67,7 +73,7 @@
      align-self: flex-end;
      border-radius: 20px;
      padding: 10px;
-     background-color: #6298ad;
+     background-color: rgb(223, 248, 209);
      word-wrap: break-word;
      overflow-wrap: anywhere;
      white-space: pre-wrap;
@@ -85,7 +91,7 @@
      height: 10%;
 
 }
-.volver_button{
+.boton-volver{
      display: none;
 }
 .text_area {
@@ -107,11 +113,11 @@
      
      display: flex;
      flex-direction: column;
-     background-color: rgba(213, 224, 223, 0.925);
+     background-color: rgba(195, 9, 212, 0.925);
 }
 @media (max-width: 600px) {
     .messages_container {
-        gap: 10px; /* Menos espacio en celulares */
+        gap: 10px; 
         padding: 10px;
     }
 }
@@ -124,8 +130,8 @@
 }
 
 }
-@media (max-width: 918px) {
-.volver_button {
+@media (max-width: 768px) {
+.boton-volver {
     display: flex;
 }}
 @media (max-width: 222px) {

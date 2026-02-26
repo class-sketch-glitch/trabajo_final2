@@ -21,7 +21,7 @@ export function Contact_screen_details() {
   }
 
   return (
-    <div className="details_container">
+    <div className="details_container chat_window">
       <div className='data_container'>
         <img src={contactoSeleccionado.imagen} alt={contactoSeleccionado.nombre} />
         <div>

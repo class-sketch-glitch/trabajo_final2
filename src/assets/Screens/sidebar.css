@@ -35,29 +35,76 @@
      border-radius: 50%;
      border: 1px solid #1de91d;
 }
+.contact_link {
+    all: unset; 
+    display: block; 
+    cursor: pointer; 
+    text-decoration: none !important;
+}
+
+.contact_link:focus, 
+.contact_link:active, 
+.contact_link:visited {
+    text-decoration: none !important;
+    color: inherit !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    background-color: transparent !important;
+}
+.contact_card:hover {
+    background-color: #eaeef5; 
+}
 
 .contact_card {
      display: flex;
      flex-direction: row;
+     text-decoration: none; 
+    color: inherit;       
+    outline: none;
+    color: black;
+    width: 100%;
+     
 }
-
+.header_card {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;        
+  width: 100%;                  
+}
 .contact_card_details {
      display: flex;
      flex-direction: column;
      justify-content: center;
      gap: 5px;
      margin-left: 10px;
+     flex: 1;           /* Esto le dice: "usa el espacio que sobre al lado de la foto" */
+  min-width: 0;      /* <--- ESTA ES LA CLAVE MÁGICA EN FLEXBOX */
+  overflow: hidden;
 }
+.mensaje_corto {
+  margin: 0;
+  font-size: 13px;
+  color: #667781;
+ 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;     
+  width: 100%;      
+}
+
 .ultima_conexion{
-     word-wrap: break-word;
-     overflow-wrap: anywhere;
+ font-size: 11px;
+  color: #667781;
+  margin: 0;
+  white-space: nowrap;  
+  padding-right: 20px;
 }
 @media (max-width: 918px) {
   .sidebar, .chat {
     width: 100vw;
   }
 
-  /* Esta es la clase que "apaga" el elemento */
+
   .ocultar-en-movil {
     display: none !important;
   }

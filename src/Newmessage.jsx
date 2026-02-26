@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { ContactContext } from './assets/contect/Contact_contexto';
-
+import "./Newmessage.css";
 
 
 
