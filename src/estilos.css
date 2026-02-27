@@ -7,7 +7,7 @@
 .app-container {
      display: flex;
      height: 100vh;
-     background-color: #a2cf9b;
+     
 }
 
 .layout-principal,
@@ -27,6 +27,7 @@
 }
 
 .desktop-only-placeholder {
+ 
      justify-content: center;
      align-items: center;
      background-color: #f0f2f5;
@@ -46,6 +47,18 @@
      border-radius: 20px;
      border: 1px solid #ccc;
 }
+.logo-container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+}
+.whatsapp-logo {
+  display: flex ; 
+  width: 10% ;  
+  height: auto ;   
+  visibility: visible ;
+  opacity: 1 ;  }
 
 @media (max-width: 768px) {
 .layout-principal,

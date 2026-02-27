@@ -4,6 +4,7 @@ import { Sidebar } from './assets/Screens/Sidebar';
 import { Contact_screen_details } from './assets/Contact_screen_details';
 import ContactProvider from './assets/contect/Contact_contexto';
 import './estilos.css'
+import { Contacts_perfil } from './assets/Screens/contacts_perfil';
 function App() {
   return (
    <ContactProvider>
@@ -18,8 +19,11 @@ function App() {
       <div className="layout-principal">
         <Sidebar /> 
         <div className="desktop-only-placeholder">
-          <p>Seleccione un contacto para comenzar</p>
+          <div className="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" alt="Logo de WhatsApp" className="whatsapp-logo" />
         </div>
+ <p>Seleccione un contacto para comenzar</p>
+  </div>
       </div>
     } 
   />
@@ -31,6 +35,12 @@ function App() {
         <Sidebar className="hide-on-mobile" /> 
         <Contact_screen_details />
       </div>
+    } 
+  />
+  <Route 
+    path="/perfil/:id" 
+    element={
+        <Contacts_perfil />
     } 
   />
         </Routes>

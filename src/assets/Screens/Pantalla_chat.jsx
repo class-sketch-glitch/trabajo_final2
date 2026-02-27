@@ -1,4 +1,5 @@
 import "./pantalla_chat.css";
+
 function Pantalla_chat (){
      <div className="pantalla_chat">
        
