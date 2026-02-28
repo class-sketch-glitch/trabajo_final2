@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { ContactContext } from './contect/Contact_contexto.jsx';
 import { NewMessage } from '../Newmessage.jsx';
-import { Contacts_perfil } from './Screens/contacts_perfil.jsx';
+import { Contacts_perfil } from './Screens/Contacts_perfil.jsx';
 
 export function Contact_screen_details() {
 
@@ -24,8 +24,7 @@ const [perfilAbierto, setPerfilAbierto] = useState(false);
   return (
  <div className="details_container chat_window">
     
-    {/* Envolvemos TODO lo que ya tenías en un solo div */}
-    {/* Esto evita que el Flexbox rompa tus estilos internos */}
+    
     <div className="chat_main_wrapper">
       
       <div className='data_container'>
@@ -58,7 +57,7 @@ const [perfilAbierto, setPerfilAbierto] = useState(false);
       <NewMessage contacto={contactoSeleccionado} />
     </div>
 
-    {/* PANEL DE PERFIL (Aparece a la derecha) */}
+  
     {perfilAbierto && (
       <div className="profile-panel">
         <header className="profile-header-bar">

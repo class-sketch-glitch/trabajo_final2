@@ -4,7 +4,7 @@ import { Sidebar } from './assets/Screens/Sidebar';
 import { Contact_screen_details } from './assets/Contact_screen_details';
 import ContactProvider from './assets/contect/Contact_contexto';
 import './estilos.css'
-import { Contacts_perfil } from './assets/Screens/contacts_perfil.jsx';
+import { Contacts_perfil } from './assets/Screens/Contacts_perfil.jsx';
 
 function App() {
   return (
