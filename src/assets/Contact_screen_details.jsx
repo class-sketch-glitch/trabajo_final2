@@ -22,31 +22,28 @@ const [perfilAbierto, setPerfilAbierto] = useState(false);
   }
 
   return (
-    <div className="details_container chat_window">
+ <div className="details_container chat_window">
+    
+    {/* Envolvemos TODO lo que ya tenías en un solo div */}
+    {/* Esto evita que el Flexbox rompa tus estilos internos */}
+    <div className="chat_main_wrapper">
+      
       <div className='data_container'>
         <Link to="/" className="boton-volver">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
-            </svg>
-          </Link>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left-short" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+          </svg>
+        </Link>
         
-    <img 
-      src={contactoSeleccionado.imagen} 
-       onClick={() => setPerfilAbierto(true)}
-    />
-  
+        <img 
+          src={contactoSeleccionado.imagen} 
+          onClick={() => setPerfilAbierto(true)}
+          style={{cursor: 'pointer'}}
+        />
         
         <div>
           <h2>{contactoSeleccionado.nombre}</h2>
           <p>Última conexión: {contactoSeleccionado.ultima_conexion}</p>
-          
-          <div>
-
-
-          </div>
-        </div>
-        <div className='svg_part'>
-
         </div>
       </div>
 
@@ -57,15 +54,21 @@ const [perfilAbierto, setPerfilAbierto] = useState(false);
           </div>
         ))}
       </div>
-     
+
+      <NewMessage contacto={contactoSeleccionado} />
+    </div>
+
+    {/* PANEL DE PERFIL (Aparece a la derecha) */}
     {perfilAbierto && (
       <div className="profile-panel">
-        <button onClick={() => setPerfilAbierto(false)}>✕</button>
+        <header className="profile-header-bar">
+          <button onClick={() => setPerfilAbierto(false)}>✕</button>
+          <span>Información</span>
+        </header>
         <Contacts_perfil contacto_seleccionado={contactoSeleccionado} />
       </div>
     )}
- 
-      <NewMessage contacto={contactoSeleccionado} />
-    </div>
+
+  </div>
   );
 }
