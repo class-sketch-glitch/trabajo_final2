@@ -40,7 +40,7 @@ function App() {
   <Route 
     path="/perfil/:id" 
     element={
-        <Contacts_perfil />
+        <Contacts_perfil/>
     } 
   />
         </Routes>
