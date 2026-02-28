@@ -5,14 +5,14 @@ import { Contact_screen_details } from './assets/Contact_screen_details';
 import ContactProvider from './assets/contect/Contact_contexto';
 import './estilos.css'
 import { Contacts_perfil } from './assets/Screens/contacts_perfil';
+
 function App() {
   return (
    <ContactProvider>
       <div className="app-container">
-        {/* Eliminamos el div 'screen_details' de aquí porque ya lo controlan las rutas internamente */}
+        
         <Routes>
-         {/* Agrega la palabra 'index' aquí. Esto le dice a React: 
-      "Solo muestra esto si la ruta es EXACTAMENTE /" */}
+       
   <Route 
     index 
     element={
